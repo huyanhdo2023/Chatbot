@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 
 class Config(BaseSettings):
     chunk_size: int
@@ -11,8 +11,8 @@ config = Config(
     chunk_size = 1000,
     chunk_overlap=0,
     embedding = "keepitreal/vietnamese-sbert",
-    similarity_function="max_marginal_relevance_search"
-    number_of_chunk = 1
+    similarity_function = "max_marginal_relevance_search",
+    number_of_chunk = 9
 )
 #  {
 
