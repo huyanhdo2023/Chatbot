@@ -21,7 +21,7 @@ openai.api_key  = os.environ['OPENAI_API_KEY']
 class HandleQA():
     def __init__(self,config):
         self.config = config
-        self.embedding = HuggingFaceEmbeddings(model_name = config.embedding,cache_folder='cache',model_kwargs = {"device": "cuda"})
+        self.embedding = HuggingFaceEmbeddings(model_name = config.embedding,cache_folder='cache',model_kwargs = {"device": "cpu"})
         self.chroma = None  
         self.memory = ConversationBufferMemory()
         self.llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0)
